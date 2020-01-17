@@ -15,6 +15,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
         backgroundColor: Color(0xFFFCAB03),
         appBar: AppBar(
@@ -26,13 +27,74 @@ class _HomePageState extends State<HomePage> {
               "images/logo.png",
             ),
           ),
+          iconTheme:  new IconThemeData(
+              color: Colors.black
+          ),
           centerTitle: true,
+        ),
+        drawer: Drawer(
+
+          child: Container(
+            color: Color(0xFFFCAB03),
+            child: ListView(
+              padding: EdgeInsets.zero,
+              children: const <Widget>[
+                DrawerHeader(
+                  decoration: BoxDecoration(
+                    color: Color(0xFFFCAB03),
+                  ),
+                  child: Text(
+                    'Menu',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 24,
+                    ),
+
+                  ),
+                ),
+
+                ListTile(
+                  leading: Icon(
+                    Icons.assignment_ind,
+                    color: Colors.black,
+                  ),
+                  title: Text(
+                    'QUEM SOMOS',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 18.0,
+                        fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.bold),
+                  ),
+
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.call,
+                    color: Colors.black,
+                  ),
+                  title: Text(
+                    'CONTATOS',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 18.0,
+                        fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.bold
+                    ),
+                  ),
+                ),
+                ListTile(
+                  leading: Icon(Icons.add),
+                  title: Text('REDES SOCIAIS'),
+                ),
+              ],
+            ),
+          )
         ),
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
               Container(
-
                 width: 450.0,
                 height: 750.0,
                 child: Stack(
@@ -44,9 +106,7 @@ class _HomePageState extends State<HomePage> {
                             color: Color(0xFFFFFFFF),
                             borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(50.0),
-                                topRight: Radius.circular(50.0)
-                            )
-                        ),
+                                topRight: Radius.circular(50.0))),
                       ),
                     ),
                     ListView(
@@ -74,10 +134,8 @@ class _HomePageState extends State<HomePage> {
                                           child: Padding(
                                             padding: EdgeInsets.all(10.0),
                                             child: Image.asset(
-                                                "images/material.png"
-                                            ),
-                                          )
-                                      ),
+                                                "images/material.png"),
+                                          )),
                                     ),
                                     Container(
                                         alignment: Alignment.center,
@@ -100,11 +158,8 @@ class _HomePageState extends State<HomePage> {
                                           Navigator.push(
                                               context,
                                               MaterialPageRoute(
-                                              builder: (context)=>
-                                                  MaterialPage()
-
-                                          )
-                                          );
+                                                  builder: (context) =>
+                                                      MaterialPage()));
                                         },
                                       ),
                                     )
@@ -159,11 +214,8 @@ class _HomePageState extends State<HomePage> {
                                           Navigator.push(
                                               context,
                                               MaterialPageRoute(
-                                                builder: (context) =>
-                                                  DinheiroPage()
-
-                                              )
-                                          );
+                                                  builder: (context) =>
+                                                      DinheiroPage()));
                                         },
                                       ),
                                     )
@@ -217,11 +269,9 @@ class _HomePageState extends State<HomePage> {
                                         onPressed: () {
                                           Navigator.push(
                                               context,
-                                            MaterialPageRoute(
-                                              builder: (context)=>
-                                                  NotaPage()
-                                            )
-                                          );
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      NotaPage()));
                                         },
                                       ),
                                     )
@@ -279,11 +329,9 @@ class _HomePageState extends State<HomePage> {
                                         onPressed: () {
                                           Navigator.push(
                                               context,
-                                            MaterialPageRoute(
-                                              builder: (context)=>
-                                                  EmpresaPage()
-                                            )
-                                          );
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      EmpresaPage()));
                                         },
                                       ),
                                     )
